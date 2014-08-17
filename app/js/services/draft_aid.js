@@ -3,15 +3,15 @@ ffServices.factory('DraftAid', function(){
 
   grade = function(diff){
     if (diff < -10) {
-        return 'Too early...';
+        return 'F';
       } else if (diff >= -10 && diff < -4) {
-        return 'Reached a little...';
+        return 'D';
       } else if (diff >= -4 && diff < 4) {
-        return 'Solid Pick';
+        return 'C';
       } else if (diff >= 4 && diff < 10) {
-        return 'Very Good!';
+        return 'B';
       } else if (diff >= 10) {
-        return 'What a Steal!';
+        return 'A';
       }
   }
 

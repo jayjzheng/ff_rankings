@@ -6,8 +6,8 @@ ffControllers.controller('DraftAidCtrl', ['$scope', '$routeParams', 'Rankings', 
       player.drafted = $scope.drafted.length;
     }
 
-    $scope.undraft = function(player){
-      $scope.drafted.pop();
+    $scope.undraft = function(){
+      player = $scope.drafted.pop();
       player.drafted = null;
     }
 

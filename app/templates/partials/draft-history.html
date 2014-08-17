@@ -1,11 +1,25 @@
-<div class="aid-title"><span class="glyphicon glyphicon-hand-right"></span> Draft History</div>
-<table class="players table table-condensed">
-  <tbody>
-    <tr ng-repeat="player in drafted | orderBy:'drafted':true">
-      <td>{{player.drafted}}</td>
-      <td>{{player.position}}</td>
-      <td>{{player.name}}</td>
-      <td>{{draftGrade(player)}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="aid-title">
+  <span class="glyphicon glyphicon-hand-right"></span> Draft History
+</div>
+
+<div class="row form-group">
+  <div class="col-md-9">
+    <button class="btn btn-sm btn-info" ng-disabled="drafted.length === 0" ng-click="undraft()">Undo</button>
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-sm btn-danger" ng-click="resetAll()">Reset All</button>
+  </div>
+</div>
+
+<div class="scrollable height-tall">
+  <table class="table table-condensed table-hover table-striped">
+    <tbody>
+      <tr ng-repeat="player in drafted | orderBy:'drafted':true">
+        <td>{{player.drafted}}</td>
+        <td>{{player.name}}</td>
+        <td>{{player.position}}</td>
+        <td>{{draftGrade(player)}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

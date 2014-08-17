@@ -1,29 +1,13 @@
+.container {padding-left:0;padding-right:5px;}
+.row {margin-left:0;margin-right:-5px;}
+.row > div {padding-left:0;padding-right:5px;}
+
 .scrollable {
   overflow-y: auto;
 }
 
-.height-800 {
-  height: 800px;
-}
-
-.height-300 {
-  height: 300px;
-}
-
-.height-400 {
-  height: 400px;
-}
-
-.height-350 {
-  height: 350px;
-}
-
-.drafted {
-  color: #ddd;
-}
-
-.tier {
-  border-top: solid 1px #aaa;
+.height-tall {
+  height: 710px;
 }
 
 .table-condensed > tbody > tr > td {
@@ -31,24 +15,16 @@
   font-size: 13px;
 }
 
-.table-condensed > thead > tr > th {
-  padding: 2px;
-}
-
 .aid-title {
   text-align: center;
   font-weight: bold;
   background-color: #eee;
   padding: 5px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 3px;
-  margin-top: 3px;
+  margin-bottom: 5px;
 }
 
 .position-title {
+  text-align: center;
   font-weight: bold;
-  border-bottom: dotted 1px #ccc;
   margin-bottom: 5px;
 }

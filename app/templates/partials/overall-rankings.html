@@ -1,8 +1,20 @@
-<span class="col-md-12 position-title">Overall Rankings</span>
-<ul class="list-unstyled position-content">
-  <li ng-repeat="player in rankings | orderBy:'rank' | filter:positionFilter(position)">
-    Tier {{player.tier}}.
-    <a href='' ng-click='draft(player)' ng-hide='player.drafted'>{{player.name}}</a>
-    ({{player.team}})
-  </li>
-</ul>
+<div class="aid-title">
+  <span class="glyphicon glyphicon-sort-by-attributes"></span> Overall Rankings
+</div>
+
+<div class="row">
+  <input type="text" class="form-control" placeholder="Search" ng-model="search">
+</div>
+
+<div class="scrollable height-tall">
+  <table class="table table-condensed table-hover table-striped">
+    <tr ng-if='!player.drafted'
+        ng-repeat="player in rankings | orderBy:['tier', 'rank'] | filter:search">
+      <td>Tier {{player.tier}}</td>
+      <td>{{player.position}}</td>
+      <td><a href='' ng-click='draft(player)'>{{player.name}}</a></td>
+      <td>{{player.team}}</td>
+      <td>{{player.bye}}</td>
+    </tr>
+  </table>
+</div>

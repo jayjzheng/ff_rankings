@@ -1,11 +1,16 @@
-<div class="aid-title"><span class="glyphicon glyphicon-sort-by-attributes"></span> Top Picks By Position</div>
-<div class="col-md-3 scrollable height-400" ng-repeat="position in positions">
+<div class="aid-title">
+  <span class="glyphicon glyphicon-sort-by-attributes"></span> Top Picks By Position
+</div>
+
+<div class="col-md-6" ng-repeat="position in positions">
   <span class="col-md-12 position-title">{{positionText(position)}}</span>
-  <ul class="list-unstyled position-content">
-    <li ng-repeat="player in rankings | orderBy:'rank' | filter:positionFilter(position)">
-      <small>Tier {{player.tier}}.
-      <a href='' ng-click='draft(player)' ng-hide='player.drafted'>{{player.name}}</a>
-      ({{player.team}})</small>
-    </li>
-  </ul>
+  <table class="table table-condensed table-hover table-striped">
+    <tr ng-if='!player.drafted'
+        ng-repeat="player in rankings | orderBy:'rank' | filter:positionFilter(position) | limitTo: 15">
+      <td>Tier {{player.tier}}</td>
+      <td><a href='' ng-click='draft(player)'>{{player.name}}</a></td>
+      <td>{{player.team}}</td>
+      <td>{{player.bye}}</td>
+    </tr>
+  </table>
 </div>
