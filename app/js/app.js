@@ -21,6 +21,10 @@ ffApp.config(['$routeProvider',
         templateUrl: 'templates/draft-aid.html',
         controller: 'DraftAidCtrl'
       }).
+      when('/about', {
+        templateUrl: 'templates/about.html'
+        // controller: 'AboutCtrl'
+      }).
       otherwise({
         redirectTo: '/rankings'
       });
