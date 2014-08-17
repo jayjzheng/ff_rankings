@@ -4,21 +4,21 @@ This project will allow you to interact with player ranking data and improve you
 
 # Credits
 
-Player data come from fantasypros.com.
-Tier data are from borischen.co.
+- Player data come from fantasypros.com.
+- Tier data are from borischen.co.
 
 # Future Features
 
-Support PPR and .5 PPR
-Colorful tiers.
-Show all stats when hover over.
-Better draft grades.
-Calculate risk factor.
-Add user login.
-Allow private/custom rankings.
+- Support PPR and .5 PPR
+- Colorful tiers.
+- Show all stats when hover over.
+- Better draft grades.
+- Calculate risk factor.
+- Add user login.
+- Allow private/custom rankings.
 
 # Geeky Stuff
 
-AngularJS
-Twitter Bootstrap
-Source Code
+- AngularJS
+- Twitter Bootstrap
+- Source Code
