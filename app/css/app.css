@@ -1,0 +1,54 @@
+.scrollable {
+  overflow-y: auto;
+}
+
+.height-800 {
+  height: 800px;
+}
+
+.height-300 {
+  height: 300px;
+}
+
+.height-400 {
+  height: 400px;
+}
+
+.height-350 {
+  height: 350px;
+}
+
+.drafted {
+  color: #ddd;
+}
+
+.tier {
+  border-top: solid 1px #aaa;
+}
+
+.table-condensed > tbody > tr > td {
+  padding: 2px;
+  font-size: 13px;
+}
+
+.table-condensed > thead > tr > th {
+  padding: 2px;
+}
+
+.aid-title {
+  text-align: center;
+  font-weight: bold;
+  background-color: #eee;
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+
+.position-title {
+  font-weight: bold;
+  border-bottom: dotted 1px #ccc;
+  margin-bottom: 5px;
+}

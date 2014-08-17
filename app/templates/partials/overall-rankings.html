@@ -1,0 +1,8 @@
+<span class="col-md-12 position-title">Overall Rankings</span>
+<ul class="list-unstyled position-content">
+  <li ng-repeat="player in rankings | orderBy:'rank' | filter:positionFilter(position)">
+    Tier {{player.tier}}.
+    <a href='' ng-click='draft(player)' ng-hide='player.drafted'>{{player.name}}</a>
+    ({{player.team}})
+  </li>
+</ul>

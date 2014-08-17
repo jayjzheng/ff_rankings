@@ -1,0 +1,25 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-9">
+          <ng-include src="'templates/partials/draft-aid-table.html'" />
+        </div>
+
+        <div class="col-md-3 scrollable height-350">
+          <ng-include src="'templates/partials/overall-rankings.html'" />
+        </div>
+      </div>
+
+      <div class="row">
+        <ng-include src="'templates/partials/position-rankings.html'" />
+      </div>
+    </div>
+
+    <div class="col-md-3 scrollable height-800">
+      <ng-include src="'templates/partials/draft-history.html'" />
+    </div>
+  </div>
+
+</div>

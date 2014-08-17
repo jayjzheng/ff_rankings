@@ -1,0 +1,11 @@
+<div class="aid-title"><span class="glyphicon glyphicon-hand-right"></span> Draft History</div>
+<table class="players table table-condensed">
+  <tbody>
+    <tr ng-repeat="player in drafted | orderBy:'drafted':true">
+      <td>{{player.drafted}}</td>
+      <td>{{player.position}}</td>
+      <td>{{player.name}}</td>
+      <td>{{draftGrade(player)}}</td>
+    </tr>
+  </tbody>
+</table>

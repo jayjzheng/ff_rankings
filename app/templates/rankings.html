@@ -1,0 +1,41 @@
+<div class="container">
+
+  <div class="row">
+    <div class="form-group pull-right col-md-5">
+      <input type="text" class="form-control" placeholder="Search" ng-model="search">
+    </div>
+  </div>
+
+  <div class="row scrollable height-800">
+    <table class="players table table-condensed table-striped table-hover" >
+      <thead>
+        <th><a href='' ng-click="predicate = 'rank'; reverse = !reverse">Rank</a></th>
+        <th><a href='' ng-click="predicate = 'tier'; reverse = !reverse">Tier</a></th>
+        <th><a href='' ng-click="predicate = 'name'; reverse = !reverse">Name</a></th>
+        <th><a href='' ng-click="predicate = 'position'; reverse = !reverse">Position</a></th>
+        <th><a href='' ng-click="predicate = 'team'; reverse = !reverse">Team</a></th>
+        <th><a href='' ng-click="predicate = 'bye'; reverse = !reverse">Bye</a></th>
+        <th><a href='' ng-click="predicate = 'best'; reverse = !reverse">Best</a></th>
+        <th><a href='' ng-click="predicate = 'worst'; reverse = !reverse">Worst</a></th>
+        <th><a href='' ng-click="predicate = 'average'; reverse = !reverse">Average</a></th>
+        <th><a href='' ng-click="predicate = 'stdDev'; reverse = !reverse">Std Dev</a></th>
+        <th><a href='' ng-click="predicate = 'adp'; reverse = !reverse">ADP</a></th>
+      </thead>
+      <tbody>
+      <tr ng-repeat="player in rankings | orderBy:predicate:reverse | filter:search ">
+          <td>{{player.rank}}</td>
+          <td>{{player.tier}}</td>
+          <td>{{player.name}}</td>
+          <td>{{player.position}}</td>
+          <td>{{player.team}}</td>
+          <td>{{player.bye}}</td>
+          <td>{{player.best}}</td>
+          <td>{{player.worst}}</td>
+          <td>{{player.average}}</td>
+          <td>{{player.stdDev}}</td>
+          <td>{{player.adp}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
