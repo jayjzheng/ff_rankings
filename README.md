@@ -9,7 +9,9 @@ This project will allow you to interact with player ranking data and improve you
 
 # Future Features
 
-- Support PPR and .5 PPR
+- Support PPR and .5 PPR (Done)
+- Local storage.
+- Backend API.
 - Colorful tiers.
 - Show all stats when hover over.
 - Better draft grades.
