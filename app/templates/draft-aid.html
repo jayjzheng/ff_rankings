@@ -3,11 +3,46 @@
   <div class="row">
     <div class="col-md-9">
       <div class="row">
-        <div class="col-md-4">
-          <ng-include src="'templates/partials/overall-rankings.html'" />
+        <div class="col-md-5">
+
+          <div class="aid-title">
+            <span class="glyphicon glyphicon-sort-by-attributes"></span> Overall Rankings
+          </div>
+
+          <div class="row form-group">
+            <div class="col-md-7">
+              <input type="text" class="form-control" placeholder="Search" ng-model="search">
+            </div>
+
+            <div class="form-group col-md-5">
+              <label class="radio-inline">
+                <input type="radio" ng-model="format" value="standard" ng-change="loadRankings(format)">std <br/>
+              </label>
+              <label class="radio-inline">
+                <input type="radio" ng-model="format" value="ppr" ng-change="loadRankings(format)">ppr <br/>
+              </label>
+              <label class="radio-inline">
+                <input type="radio" ng-model="format" value="half" ng-change="loadRankings(format)">half <br/>
+              </label>
+            </div>
+          </div>
+
+          <div class="scrollable height-tall">
+            <table class="table table-condensed table-hover table-striped">
+              <tr ng-if='!player.drafted'
+                  ng-repeat="player in rankings | orderBy:['tier', 'rank'] | filter:search">
+                <td>Tier {{player.tier}}</td>
+                <td>{{player.position}}</td>
+                <td><a href='' ng-click='draft(player)'>{{player.name}}</a></td>
+                <td>{{player.team}}</td>
+                <td>{{player.bye}}</td>
+              </tr>
+            </table>
+          </div>
+          <!-- <ng-include src="'templates/partials/overall-rankings.html'" /> -->
         </div>
 
-        <div class="col-md-8">
+        <div class="col-md-7">
           <ng-include src="'templates/partials/position-rankings.html'" />
         </div>
       </div>

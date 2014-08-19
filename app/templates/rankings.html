@@ -1,6 +1,18 @@
 <div class="container">
 
   <div class="row">
+    <div class="form-group col-md-7">
+      <label class="radio-inline">
+        <input type="radio" ng-model="format" value="standard" ng-change="loadRankings(format)">Standard <br/>
+      </label>
+      <label class="radio-inline">
+        <input type="radio" ng-model="format" value="ppr" ng-change="loadRankings(format)">PPR <br/>
+      </label>
+      <label class="radio-inline">
+        <input type="radio" ng-model="format" value="half" ng-change="loadRankings(format)">Half PPR <br/>
+      </label>
+    </div>
+
     <div class="form-group pull-right col-md-5">
       <input type="text" class="form-control" placeholder="Search" ng-model="search">
     </div>

@@ -20,6 +20,11 @@ ffControllers.controller('DraftAidCtrl', ['$scope', '$routeParams', 'Rankings', 
       $scope.drafted = [];
     }
 
+    $scope.loadRankings = function(format) {
+      $scope.rankings = Rankings[format];
+      $scope.resetAll();
+    }
+
     $scope.draftGrade = function(player){
       var diff = player.drafted - player.rank;
       return DraftAid.grade(diff);
@@ -44,8 +49,8 @@ ffControllers.controller('DraftAidCtrl', ['$scope', '$routeParams', 'Rankings', 
     }
 
     // Initializations
-    $scope.rankings = Rankings.standard;
-    $scope.resetAll();
+    $scope.format = 'standard';
+    $scope.loadRankings($scope.format);
 
     $scope.positions = ['RB', 'WR', 'QB', 'TE'];
   }]);
