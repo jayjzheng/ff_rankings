@@ -21,8 +21,13 @@
 </div>
 
 <div class="scrollable height-tall">
-  <table class="table table-condensed table-hover table-striped">
+  <table class="table table-condensed table-hover">
     <tr ng-if='!player.drafted'
+        ng-class="{active: player.tier % 5 === 0,
+                   success: player.tier % 5 === 1,
+                   warning: player.tier % 5 === 2,
+                   info: player.tier % 5 === 3,
+                   danger: player.tier % 5 === 4}"
         ng-repeat="player in rankings | orderBy:['tier', 'rank'] | filter:search">
       <td>Tier {{player.tier}}</td>
       <td>{{player.position}}</td>
