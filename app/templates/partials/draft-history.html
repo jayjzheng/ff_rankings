@@ -4,10 +4,14 @@
 
 <div class="row form-group">
   <div class="col-md-9">
-    <button class="btn btn-sm btn-info" ng-disabled="drafted.length === 0" ng-click="undraft()">Undo</button>
+    <button class="btn btn-sm btn-info" ng-disabled="drafted.length === 0" ng-click="undraft()">
+      <span class="glyphicon glyphicon-backward"></span> Undo
+    </button>
   </div>
   <div class="col-md-3">
-    <button class="btn btn-sm btn-warning" ng-click="restart()">Restart</button>
+    <button class="btn btn-sm btn-warning" ng-click="restart()">
+      <span class="glyphicon glyphicon-repeat"></span> Restart
+    </button>
   </div>
 </div>
 
