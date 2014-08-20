@@ -4,6 +4,7 @@
 
 var ffApp = angular.module('ffApp', [
   'ngRoute',
+  'LocalStorageModule',
 
   'ffControllers',
   'ffFilters',
@@ -28,4 +29,9 @@ ffApp.config(['$routeProvider',
       otherwise({
         redirectTo: '/rankings'
       });
+  }]);
+
+ffApp.config(['localStorageServiceProvider',
+  function(localStorageServiceProvider){
+    localStorageServiceProvider.setPrefix('jayzhengff_');
   }]);
