@@ -6,6 +6,11 @@
   <span class="col-md-12 position-title">{{positionText(position)}}</span>
   <table class="table table-condensed table-hover table-striped">
     <tr ng-if='!player.drafted'
+        ng-class="{active: player.tier % 5 === 0,
+                   success: player.tier % 5 === 1,
+                   warning: player.tier % 5 === 2,
+                   info: player.tier % 5 === 3,
+                   danger: player.tier % 5 === 4}"
         ng-repeat="player in rankings | orderBy:'rank' | filter:positionFilter(position) | limitTo: 15">
       <td>Tier {{player.tier}}</td>
       <td><a href='' ng-click='draft(player)'>{{player.name}}</a></td>
