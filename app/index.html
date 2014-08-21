@@ -10,9 +10,14 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
   <nav class="navbar navbar-default" role="navigation" ng-controller="NavBarCtrl">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -20,15 +25,13 @@
       </div>
 
       <ul class="nav navbar-nav">
-        <li ng-class="getClass('/rankings')"><a href="#/rankings"><span class="glyphicon glyphicon-list"></span> Rankings</a></li>
-        <li ng-class="getClass('/draft-aid')"><a href="#/draft-aid"><span class="glyphicon glyphicon-stats"></span> Draft Aid</a></li>
-        <li ng-class="getClass('/about')" class="pull-right"><a href="#/about"><span class="glyphicon glyphicon-user"></span> About</a></li>
+        <li ng-class="getClass('/rankings')"><a href="#/rankings"><i class="fa fa-list-ol"></i> Rankings</a></li>
+        <li ng-class="getClass('/draft-aid')"><a href="#/draft-aid"><i class="fa fa-desktop"></i> Draft Aid</a></li>
+        <li ng-class="getClass('/about')" class="pull-right"><a href="#/about"><i class="fa fa-male"></i> About</a></li>
       </ul>
     </div>
   </nav>
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+
   <div id="wrap">
     <div ng-view></div>
   </div>

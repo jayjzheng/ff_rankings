@@ -1,5 +1,5 @@
 ffServices.factory('DraftAid', function(){
-  var grade;
+  var grade, populateDrafted;
 
   grade = function(diff){
     if (diff < -10) {
@@ -15,8 +15,20 @@ ffServices.factory('DraftAid', function(){
       }
   }
 
+  populateDrafted = function(rankings, drafted){
+    _.each(rankings, function(player){
+      var drafted_player = _.find(drafted, function(p){ return p.name === player.name; });
+      if (drafted_player) {
+        player.drafted = drafted_player.drafted;
+      } else {
+        player.drafted = null;
+      }
+    });
+  }
+
   return {
-    grade: grade
+    grade: grade,
+    populateDrafted: populateDrafted
   }
 
 });

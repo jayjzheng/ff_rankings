@@ -2,23 +2,17 @@ ffControllers.controller('DraftAidCtrl', ['$scope', '$routeParams', 'Rankings', 
   function($scope, $routeParams, Rankings, DraftAid, localStorageService) {
 
     $scope.draft = function(player){
-      var key;
-
       $scope.drafted.push(player);
       player.drafted = $scope.drafted.length;
 
-      key = 'drafted_' + $scope.format;
-      localStorageService.set(key, $scope.drafted);
+      localStorageService.set('drafted_' + $scope.format, $scope.drafted);
     }
 
     $scope.undraft = function(){
-      var key;
-
       player = $scope.drafted.pop();
       player.drafted = null;
 
-      key = 'drafted_' + $scope.format;
-      localStorageService.set(key, $scope.drafted);
+      localStorageService.set('drafted_' + $scope.format, $scope.drafted);
     }
 
     $scope.isLastDrafted = function(player){
@@ -26,34 +20,18 @@ ffControllers.controller('DraftAidCtrl', ['$scope', '$routeParams', 'Rankings', 
     }
 
     $scope.restart = function(){
-      var key;
-
       $scope.drafted = [];
-      $scope.populateDrafted($scope.rankings, $scope.drafted);
+      DraftAid.populateDrafted($scope.rankings, $scope.drafted);
 
-      key = 'drafted_' + $scope.format;
-      localStorageService.remove(key);
+      localStorageService.remove('drafted_' + $scope.format);
     }
 
     $scope.loadRankings = function(format) {
       $scope.rankings = Rankings[format];
       $scope.format = format;
 
-      key = 'drafted_' + format;
-
-      $scope.drafted = localStorageService.get(key) || [];
-      $scope.populateDrafted($scope.rankings, $scope.drafted);
-    }
-
-    $scope.populateDrafted = function(rankings, drafted) {
-      _.each($scope.rankings, function(player){
-        var drafted_player = _.find(drafted, function(p){ return p.name === player.name; });
-        if (drafted_player) {
-          player.drafted = drafted_player.drafted;
-        } else {
-          player.drafted = null;
-        }
-      });
+      $scope.drafted = localStorageService.get('drafted_' + format) || [];
+      DraftAid.populateDrafted($scope.rankings, $scope.drafted);
     }
 
     $scope.draftGrade = function(player){
@@ -70,8 +48,7 @@ ffControllers.controller('DraftAidCtrl', ['$scope', '$routeParams', 'Rankings', 
     }
 
     $scope.positionText = function(position){
-      var positionMappings = { null: 'Overall',
-                               RB: 'Running Backs',
+      var positionMappings = { RB: 'Running Backs',
                                WR: 'Wide Receivers',
                                QB: 'Quarterbacks',
                                TE: 'Tightends'};

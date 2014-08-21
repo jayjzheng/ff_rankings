@@ -1,16 +1,14 @@
 <div class="aid-title">
-  <span class="glyphicon glyphicon-hand-right"></span> Draft History
+  <i class="fa fa-history"></i> Draft History
 </div>
 
 <div class="row form-group">
-  <div class="col-md-9">
+  <div class="col-md-12">
     <button class="btn btn-sm btn-info" ng-disabled="drafted.length === 0" ng-click="undraft()">
-      <span class="glyphicon glyphicon-backward"></span> Undo
+      <i class="fa fa-backward"></i> Undo
     </button>
-  </div>
-  <div class="col-md-3">
-    <button class="btn btn-sm btn-warning" ng-click="restart()">
-      <span class="glyphicon glyphicon-repeat"></span> Restart
+    <button class="pull-right btn btn-sm btn-warning" ng-click="restart()">
+      <i class="fa fa-eject"></i> Restart
     </button>
   </div>
 </div>
