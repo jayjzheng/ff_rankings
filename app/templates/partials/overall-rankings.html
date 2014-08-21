@@ -8,15 +8,11 @@
   </div>
 
   <div class="form-group col-md-5">
-    <label class="radio-inline">
-      <input type="radio" ng-model="format" value="standard" ng-change="loadRankings(format)">std <br/>
-    </label>
-    <label class="radio-inline">
-      <input type="radio" ng-model="format" value="ppr" ng-change="loadRankings(format)">ppr <br/>
-    </label>
-    <label class="radio-inline">
-      <input type="radio" ng-model="format" value="half" ng-change="loadRankings(format)">half <br/>
-    </label>
+    <select ng-model="format"
+            ng-change="loadRankings(format)"
+            name="format"
+            required
+            ng-options="f.value as f.label for f in formats"></select>
   </div>
 </div>
 

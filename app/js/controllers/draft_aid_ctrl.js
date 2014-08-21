@@ -57,8 +57,10 @@ ffControllers.controller('DraftAidCtrl', ['$scope', '$routeParams', 'Rankings', 
     }
 
     // Initializations
+    $scope.formats = Rankings.formats;
+    $scope.positions = Rankings.positions;
+
     $scope.format = 'standard';
     $scope.loadRankings($scope.format);
 
-    $scope.positions = ['RB', 'WR', 'QB', 'TE'];
   }]);

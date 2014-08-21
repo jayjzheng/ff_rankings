@@ -2,15 +2,11 @@
 
   <div class="row">
     <div class="form-group col-md-7">
-      <label class="radio-inline">
-        <input type="radio" ng-model="format" value="standard" ng-change="loadRankings(format)">Standard <br/>
-      </label>
-      <label class="radio-inline">
-        <input type="radio" ng-model="format" value="ppr" ng-change="loadRankings(format)">PPR <br/>
-      </label>
-      <label class="radio-inline">
-        <input type="radio" ng-model="format" value="half" ng-change="loadRankings(format)">Half PPR <br/>
-      </label>
+      <select ng-model="format"
+              ng-change="loadRankings(format)"
+              name="format"
+              required
+              ng-options="f.value as f.label for f in formats"></select>
     </div>
 
     <div class="form-group pull-right col-md-5">
@@ -49,9 +45,5 @@
         </tr>
       </tbody>
     </table>
-  </div>
-
-  <div class="row">
-    <a href="http://www.fantasypros.com/nfl/rankings/consensus-cheatsheets.php" target="_blank">Data Source</a>
   </div>
 </div>
