@@ -3,10 +3,6 @@
 </div>
 
 <div class="row form-group">
-  <div class="col-md-7">
-    <input type="text" class="form-control" placeholder="Search" ng-model="search">
-  </div>
-
   <div class="form-group col-md-5">
     <select ng-model="format"
             ng-change="loadRankings(format)"
@@ -14,11 +10,17 @@
             required
             ng-options="f.value as f.label for f in formats"></select>
   </div>
+
+  <div class="col-md-7 pull-right">
+    <input type="text" class="form-control" placeholder="Search" ng-model="search">
+  </div>
 </div>
 
 <div class="scrollable height-tall">
   <table class="table table-condensed table-hover">
     <tr ng-if='!player.drafted'
+        data-toggle="tooltip"
+        title="{{player.name}}, tier: {{player.tier}}, adp: {{player.adp}}, bye: {{player.bye}}"
         ng-class="{active: player.tier % 5 === 0,
                    success: player.tier % 5 === 1,
                    warning: player.tier % 5 === 2,
