@@ -26,7 +26,7 @@
         <th><a href='' ng-click="predicate = 'best'; reverse = !reverse">Best</a></th>
         <th><a href='' ng-click="predicate = 'worst'; reverse = !reverse">Worst</a></th>
         <th><a href='' ng-click="predicate = 'average'; reverse = !reverse">Average</a></th>
-        <th><a href='' ng-click="predicate = 'stdDev'; reverse = !reverse">Std Dev</a></th>
+        <th><a href='' ng-click="predicate = 'std_dev'; reverse = !reverse">Std Dev</a></th>
         <th><a href='' ng-click="predicate = 'adp'; reverse = !reverse">ADP</a></th>
       </thead>
       <tbody>
@@ -39,9 +39,9 @@
           <td>{{player.bye}}</td>
           <td>{{player.best}}</td>
           <td>{{player.worst}}</td>
-          <td>{{player.average}}</td>
-          <td>{{player.stdDev}}</td>
-          <td>{{player.adp}}</td>
+          <td>{{player.average | number : 2}}</td>
+          <td>{{player.std_dev | number: 2}}</td>
+          <td>{{player.adp || 'NA'}}</td>
         </tr>
       </tbody>
     </table>
