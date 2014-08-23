@@ -1,5 +1,5 @@
-ffControllers.controller('DraftAidCtrl', ['$scope', '$routeParams', 'Rankings', 'DraftAid', 'localStorageService',
-  function($scope, $routeParams, Rankings, DraftAid, localStorageService) {
+ffControllers.controller('DraftAidCtrl', ['$scope', '$routeParams', 'Ranking', 'Rankings', 'DraftAid', 'localStorageService',
+  function($scope, $routeParams, Ranking, Rankings, DraftAid, localStorageService) {
 
     $scope.draft = function(player){
       $scope.drafted.push(player);
@@ -26,12 +26,23 @@ ffControllers.controller('DraftAidCtrl', ['$scope', '$routeParams', 'Rankings', 
       localStorageService.remove('drafted_' + $scope.format);
     }
 
-    $scope.loadRankings = function(format) {
-      $scope.rankings = Rankings[format];
+    $scope.loadRankings = function(format, week) {
+      $scope.loading = true;
       $scope.format = format;
 
-      $scope.drafted = localStorageService.get('drafted_' + format) || [];
-      DraftAid.populateDrafted($scope.rankings, $scope.drafted);
+      Ranking.index(format, week || 0).
+        success(function(data, status, headers, config){
+          $scope.rankings = data;
+
+          $scope.drafted = localStorageService.get('drafted_' + format) || [];
+          DraftAid.populateDrafted($scope.rankings, $scope.drafted);
+
+          $scope.loading = false;
+        }).
+        error(function(data, status, headers, config){
+          //handle errors;
+          $scope.loading = false;
+        });
     }
 
     $scope.draftGrade = function(player){

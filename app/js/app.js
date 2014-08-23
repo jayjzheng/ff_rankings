@@ -4,11 +4,14 @@
 
 var ffApp = angular.module('ffApp', [
   'ngRoute',
+  'ngResource',
+
   'LocalStorageModule',
 
   'ffControllers',
   'ffFilters',
-  'ffServices'
+  'ffServices',
+  'ffResources'
 ]);
 
 ffApp.config(['$routeProvider',
