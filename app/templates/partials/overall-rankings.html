@@ -17,7 +17,8 @@
 </div>
 
 <div class="scrollable height-tall">
-  <table class="table table-condensed table-hover">
+  <h4 ng-if="loading"><i class="fa fa-spinner fa-spin"></i> Loading Data...</h4>
+  <table ng-if="!loading" class="table table-condensed table-hover">
     <tr ng-if='!player.drafted'
         data-toggle="tooltip"
         title="{{player.name}}, tier: {{player.tier}}, adp: {{player.adp}}, bye: {{player.bye}}"

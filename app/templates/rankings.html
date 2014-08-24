@@ -15,7 +15,8 @@
   </div>
 
   <div class="row scrollable height-tall">
-    <table class="players table table-condensed table-striped table-hover" >
+    <h3 ng-if="loading"><i class="fa fa-spinner fa-spin"></i> Loading Data...</h3>
+    <table ng-if="!loading" class="players table table-condensed table-striped table-hover" >
       <thead>
         <th><a href='' ng-click="predicate = 'rank'; reverse = !reverse">Rank</a></th>
         <th><a href='' ng-click="predicate = 'tier'; reverse = !reverse">Tier</a></th>
