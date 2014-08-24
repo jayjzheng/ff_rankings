@@ -1,13 +1,11 @@
-ffResources.factory('Ranking', ['$resource', '$http',
-  function($resource, $http) {
-    var resource, base_url;
+ffResources.factory('Ranking', ['$resource', '$http', 'REMOTE_HOST', 'LOCAL_HOST',
+  function($resource, $http, REMOTE_HOST, LOCAL_HOST) {
+    var resource;
 
     resource = {};
-    base_url = 'http://ff-rankings.herokuapp.com/';
-    // base_url = 'http://localhost:3000/';
 
     resource.index = function(format, week) {
-      return $http.get(base_url + 'ranking_collections.json', {params: {rc_format: format, week: week}});
+      return $http.get(LOCAL_HOST + 'ranking_collections.json', {params: {rc_format: format, week: week}});
     }
 
     return resource;
