@@ -5,7 +5,7 @@ This project will allow you to interact with player ranking data and improve you
 
 ## Setup
 
-If you don't want to setup and use your own backend api, edit js/resources/ranking.js and change LOCAL_HOST to REMOTE_HOST.
+If you want to setup and use your own backend api, edit config.js. Change USE_LOCAL_HOST to true, and LOCAL_HOST_URL to your own localhost.
 
 ## Credits
 
