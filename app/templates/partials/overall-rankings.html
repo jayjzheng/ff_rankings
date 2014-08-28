@@ -22,12 +22,12 @@
     <tr ng-if='!player.drafted'
         data-toggle="tooltip"
         title="{{player.name}}, tier: {{player.tier}}, adp: {{player.adp}}, bye: {{player.bye}}"
-        ng-class="{active: player.tier % 5 === 0,
-                   success: player.tier % 5 === 1,
-                   warning: player.tier % 5 === 2,
-                   info: player.tier % 5 === 3,
-                   danger: player.tier % 5 === 4}"
-        ng-repeat="player in rankings | orderBy:'rank' | filter:search"
+        ng-class="{active: player.tier % 4 === 0,
+                   success: player.tier % 4 === 1,
+                   warning: player.tier % 4 === 2,
+                   info: player.tier % 4 === 3,
+                   danger: player.tier % 1 !== 0 }"
+        ng-repeat="player in rankings | orderBy:['tier', 'rank'] | filter:search"
         ng-click='draft(player)'>
       <td>Tier {{player.tier}}</td>
       <td>{{player.position}}</td>
