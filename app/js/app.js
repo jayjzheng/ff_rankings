@@ -35,7 +35,7 @@ ffApp.config(['$routeProvider',
         templateUrl: 'templates/about.html'
       }).
       otherwise({
-        redirectTo: '/rankings'
+        redirectTo: '/draft-aid'
       });
   }]);
 
