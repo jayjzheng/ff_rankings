@@ -15,8 +15,8 @@ var ffApp = angular.module('ffApp', [
 ]);
 
 // Constants
-ffApp.constant('REMOTE_HOST_URL','http://ff-rankings.herokuapp.com/')
-     .constant('LOCAL_HOST_URL','http://localhost:3000/')
+ffApp.constant('REMOTE_HOST_URL','http://ff-api.herokuapp.com/')
+     .constant('LOCAL_HOST_URL','http://localhost:9292/')
      .constant('USE_LOCAL_HOST', false);
 
 // Routes

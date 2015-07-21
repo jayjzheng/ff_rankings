@@ -21,7 +21,7 @@
   <table ng-if="!loading" class="table table-condensed table-hover">
     <tr ng-if='!player.drafted'
         data-toggle="tooltip"
-        title="{{player.name}}, tier: {{player.tier}}, adp: {{player.adp}}, bye: {{player.bye}}"
+        title="{{player.name}}, tier: {{player.tier}}, adp: {{player.average_draft_position}}, bye: {{player.bye_week}}"
         ng-class="{active: player.tier % 4 === 0,
                    success: player.tier % 4 === 1,
                    warning: player.tier % 4 === 2,
@@ -33,7 +33,7 @@
       <td>{{player.position}}</td>
       <td>{{player.name}}</a></td>
       <td>{{player.team}}</td>
-      <td>{{player.bye}}</td>
+      <td>{{player.bye_week}}</td>
     </tr>
   </table>
 </div>

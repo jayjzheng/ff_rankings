@@ -23,12 +23,12 @@
         <th><a href='' ng-click="predicate = 'name'; reverse = !reverse">Name</a></th>
         <th><a href='' ng-click="predicate = 'position'; reverse = !reverse">Position</a></th>
         <th><a href='' ng-click="predicate = 'team'; reverse = !reverse">Team</a></th>
-        <th><a href='' ng-click="predicate = 'bye'; reverse = !reverse">Bye</a></th>
+        <th><a href='' ng-click="predicate = 'bye_week'; reverse = !reverse">Bye</a></th>
         <th><a href='' ng-click="predicate = 'best'; reverse = !reverse">Best</a></th>
         <th><a href='' ng-click="predicate = 'worst'; reverse = !reverse">Worst</a></th>
         <th><a href='' ng-click="predicate = 'average'; reverse = !reverse">Average</a></th>
         <th><a href='' ng-click="predicate = 'std_dev'; reverse = !reverse">Std Dev</a></th>
-        <th><a href='' ng-click="predicate = 'adp'; reverse = !reverse">ADP</a></th>
+        <th><a href='' ng-click="predicate = 'average_draft_position'; reverse = !reverse">ADP</a></th>
       </thead>
       <tbody>
       <tr ng-repeat="player in rankings | orderBy:predicate:reverse | filter:search ">
@@ -37,12 +37,12 @@
           <td>{{player.name}}</td>
           <td>{{player.position}}</td>
           <td>{{player.team}}</td>
-          <td>{{player.bye}}</td>
+          <td>{{player.bye_week}}</td>
           <td>{{player.best}}</td>
           <td>{{player.worst}}</td>
-          <td>{{player.average | number : 2}}</td>
+          <td>{{player.average | number: 2}}</td>
           <td>{{player.std_dev | number: 2}}</td>
-          <td>{{player.adp || 'NA'}}</td>
+          <td>{{player.average_draft_position || 'NA'}}</td>
         </tr>
       </tbody>
     </table>
