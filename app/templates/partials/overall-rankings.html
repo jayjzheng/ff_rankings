@@ -29,6 +29,7 @@
                    danger: player.tier % 1 !== 0 }"
         ng-repeat="player in rankings | orderBy:['tier', 'rank'] | filter:search"
         ng-click='draft(player)'>
+      <td>{{player.rank}}</td>
       <td>Tier {{player.tier}}</td>
       <td>{{player.position}}</td>
       <td>{{player.name}}</a></td>
