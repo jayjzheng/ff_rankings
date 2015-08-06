@@ -11,8 +11,12 @@
             ng-options="f.value as f.label for f in formats"></select>
   </div>
 
-  <div class="col-md-7 pull-right">
+  <div class="col-md-5">
     <input type="text" class="form-control" placeholder="Search" ng-model="search">
+  </div>
+
+  <div class="col-md-1">
+    <button class="btn" ng-click="search=null">Clear</button>
   </div>
 </div>
 
