@@ -10,13 +10,11 @@ ffControllers.controller('DraftAidCtrl', ['$scope', '$routeParams', 'Ranking', '
 
     $scope.undraft = function(){
       player = $scope.drafted.pop();
-      player.drafted = null;
+
+      var found = _.find($scope.rankings, function(p){ return p.name === player.name; });
+      found.drafted = null;
 
       localStorageService.set('drafted_' + $scope.format, $scope.drafted);
-    }
-
-    $scope.isLastDrafted = function(player){
-      return player === _.last($scope.drafted);
     }
 
     $scope.restart = function(){
