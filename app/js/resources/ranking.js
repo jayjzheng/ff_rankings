@@ -11,7 +11,7 @@ ffResources.factory('Ranking', ['$resource', '$http', 'USE_LOCAL_HOST', 'REMOTE_
     }
 
     resource.index = function(format, week) {
-      return $http.get(base_url + 'rankings', {params: {format: format, week: week}});
+      return $http.get(base_url + 'rankings', {params: {format: format, week: week}, cache: true});
     }
 
     return resource;
