@@ -1,5 +1,5 @@
-ffControllers.controller('DraftAidCtrl', ['$scope', '$routeParams', 'Ranking', 'Rankings', 'DraftAid', 'localStorageService',
-  function($scope, $routeParams, Ranking, Rankings, DraftAid, localStorageService) {
+ffControllers.controller('DraftAidCtrl', ['$rootScope', '$scope', '$routeParams', 'Ranking', 'Rankings', 'DraftAid', 'localStorageService',
+  function($rootScope, $scope, $routeParams, Ranking, Rankings, DraftAid, localStorageService) {
 
     $scope.draft = function(player){
       $scope.drafted.push(player);
@@ -31,6 +31,7 @@ ffControllers.controller('DraftAidCtrl', ['$scope', '$routeParams', 'Ranking', '
       Ranking.index(format, week || 0).
         success(function(data, status, headers, config){
           $scope.rankings = data;
+          $rootScope.updatedAt = data[0].updated_at;
 
           $scope.drafted = localStorageService.get('drafted_' + format) || [];
           DraftAid.populateDrafted($scope.rankings, $scope.drafted);
