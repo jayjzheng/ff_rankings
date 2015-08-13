@@ -21,19 +21,27 @@
   <nav class="navbar navbar-default" role="navigation" ng-controller="NavBarCtrl">
     <div class="container-fluid">
       <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
         <a class="navbar-brand" href="#/draft-aid">Fantasy Football</a>
       </div>
 
-      <ul class="nav navbar-nav">
-        <li ng-class="getClass('/draft-aid')"><a href="#/draft-aid"><i class="fa fa-desktop"></i> Draft Aid</a></li>
-        <li ng-class="getClass('/about')"><a href="#/about"><i class="fa fa-male"></i> About</a></li>
-      </ul>
+      <div class="collapse navbar-collapse" id="js-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li ng-class="getClass('/draft-aid')"><a href="#/draft-aid"><i class="fa fa-desktop"></i> Draft Aid</a></li>
+          <li ng-class="getClass('/about')"><a href="#/about"><i class="fa fa-male"></i> About</a></li>
+        </ul>
 
-      <ul class="nav navbar-nav pull-right">
-        <li><a><small>Last Updated: <strong>{{updatedAt | date: "mediumDate" }}</strong></small></a></li>
-        <li><a href="http://www.fantasypros.com/nfl/rankings/consensus-cheatsheets.php" target="_blank"><small>FantasyPros</small></a></li>
-        <li><a href="http://www.borischen.co" target="_blank"><small>borischen.co</small></a></li>
-      </ul>
+        <ul class="nav navbar-nav pull-right">
+          <li><a><small>Last Updated: <strong>{{updatedAt | date: "mediumDate" }}</strong></small></a></li>
+          <li><a href="http://www.fantasypros.com/nfl/rankings/consensus-cheatsheets.php" target="_blank"><small>FantasyPros</small></a></li>
+          <li><a href="http://www.borischen.co" target="_blank"><small>borischen.co</small></a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
