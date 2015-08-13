@@ -1,18 +1,14 @@
 <div id="main" class="container-fluid clear-top">
   <div class="row">
-    <div class="col-md-9">
-      <div class="row">
-        <div class="col-md-5">
-          <ng-include src="'templates/partials/overall-rankings.html'" />
-        </div>
-
-        <div class="col-md-7">
-          <ng-include src="'templates/partials/position-rankings.html'" />
-        </div>
-      </div>
+    <div class="col-md-3 col-sm-12 col-xs-12">
+      <ng-include src="'templates/partials/overall-rankings.html'" />
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-6 col-sm-12 hidden-xs">
+      <ng-include src="'templates/partials/position-rankings.html'" />
+    </div>
+
+    <div class="col-md-3 col-sm-12 col-xs-12">
       <ng-include src="'templates/partials/draft-history.html'" />
     </div>
   </div>
