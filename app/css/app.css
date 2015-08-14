@@ -6,13 +6,9 @@
   overflow-y: auto;
 }
 
-.height-tall {
-  height: 710px;
-}
-
 .table-condensed > tbody > tr > td {
   padding: 2px;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .aid-title {
@@ -48,4 +44,37 @@ html, body {
   height: 50px;
   clear:both;
   padding:10px;
+}
+
+.overall-rankings {
+  height: 250px;
+  margin-bottom: 10px;
+}
+
+.btn-responsive {
+  padding: 4px 8px;
+  font-size: 90%;
+}
+
+@media(min-width: 768px){
+  .btn-responsive {
+    font-size: 100%;
+    padding: 5px 10px;
+  }
+
+  .overall-rankings {
+    height: 710px;
+    margin-bottom: 10px;
+  }
+
+  .table-condensed > tbody > tr > td {
+    padding: 2px;
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 992px){
+}
+
+@media(min-width: 1200px){
 }

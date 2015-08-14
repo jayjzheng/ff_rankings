@@ -1,4 +1,4 @@
-<div class="aid-title">
+<div class="aid-title hidden-xs">
   <i class="fa fa-sort-amount-asc"></i> Overall Rankings
 </div>
 
@@ -11,7 +11,7 @@
             ng-options="f.value as f.label for f in formats"></select>
   </div>
 
-  <div class="col-md-5 col-sm-7 col-xs-7">
+  <div class="col-md-5 col-sm-7 col-xs-8">
     <input type="text" class="form-control" placeholder="Search" ng-model="search">
   </div>
 
@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<div class="scrollable height-tall">
+<div class="scrollable overall-rankings">
   <h4 ng-if="loading"><i class="fa fa-spinner fa-spin"></i> Loading Data...</h4>
   <table ng-if="!loading" class="table table-condensed table-hover">
     <tr ng-if='!player.drafted'
