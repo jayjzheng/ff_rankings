@@ -30,8 +30,8 @@ ffControllers.controller('DraftAidCtrl', ['$rootScope', '$scope', '$routeParams'
 
       Ranking.index(format, week || 0).
         success(function(data, status, headers, config){
-          $scope.rankings = data;
-          $rootScope.updatedAt = data[0].updated_at;
+          $scope.rankings = data.rankings;
+          $rootScope.updatedAt = data.updated_at;
 
           $scope.drafted = localStorageService.get('drafted_' + format) || [];
           DraftAid.populateDrafted($scope.rankings, $scope.drafted);
