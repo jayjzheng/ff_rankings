@@ -2,6 +2,8 @@ ffControllers.controller('DraftAidCtrl', ['$rootScope', '$scope', '$routeParams'
   function($rootScope, $scope, $routeParams, Ranking, Rankings, DraftAid, localStorageService) {
 
     $scope.draft = function(player){
+      $scope.search.name = '';
+
       $scope.drafted.push(player);
       player.drafted = $scope.drafted.length;
 
@@ -72,5 +74,5 @@ ffControllers.controller('DraftAidCtrl', ['$rootScope', '$scope', '$routeParams'
 
     $scope.format = 'standard';
     $scope.loadRankings($scope.format);
-
+    $scope.search = {};
   }]);
