@@ -67,6 +67,10 @@ html, body {
     margin-bottom: 10px;
   }
 
+  .draft-history {
+    height: 710px;
+  }
+
   .table-condensed > tbody > tr > td {
     padding: 2px;
     font-size: 13px;
