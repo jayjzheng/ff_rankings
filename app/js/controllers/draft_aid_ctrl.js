@@ -76,4 +76,7 @@ ffControllers.controller('DraftAidCtrl', ['$rootScope', '$scope', '$routeParams'
     $scope.format = 'standard';
     $scope.loadRankings($scope.format);
     $scope.search = {};
+    $scope.settings = {
+      positionLimit: 15
+    };
   }]);

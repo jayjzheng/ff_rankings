@@ -25,6 +25,11 @@
   margin-bottom: 5px;
 }
 
+.settings {
+  padding-bottom: 10px;
+  padding-left: 15px;
+}
+
 html, body {
   height: 100%;
 }
