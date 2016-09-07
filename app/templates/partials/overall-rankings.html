@@ -7,6 +7,7 @@
     <select ng-model="format"
             ng-change="loadRankings(format)"
             name="format"
+            class="form-control"
             required
             ng-options="f.value as f.label for f in formats"></select>
   </div>
