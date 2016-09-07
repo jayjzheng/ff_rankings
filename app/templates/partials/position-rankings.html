@@ -40,6 +40,9 @@
       <td>{{player.name}}</a></td>
       <td>{{player.team}}</td>
       <td>{{player.bye_week}}</td>
+      <td ng-click="$event.stopPropagation(); player.starred = !player.starred">
+        <i class="starred fa" ng-class="player.starred ? 'fa-star text-danger' : 'fa-star-o'"></i>
+      </td>
     </tr>
   </table>
 </div>
