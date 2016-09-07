@@ -51,6 +51,10 @@ html, body {
   margin-bottom: 10px;
 }
 
+.starred.fa-star-o {
+  color: lightgrey;
+}
+
 .btn-responsive {
   padding: 4px 8px;
   font-size: 90%;
