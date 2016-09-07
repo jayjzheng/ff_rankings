@@ -5,8 +5,8 @@ ffControllers.controller('RankingsCtrl', ['$scope', 'Ranking', 'Rankings',
       $scope.loading = true;
       $scope.format = format;
       Ranking.index(format, week || 0).
-        success(function(data, status, headers, config){
-          $scope.rankings = data;
+        success(function (data, status, headers, config) {
+          $scope.rankings = data.rankings;
           $scope.loading = false;
         }).
         error(function(data, status, headers, config){
