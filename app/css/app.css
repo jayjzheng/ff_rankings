@@ -25,6 +25,11 @@
   margin-bottom: 5px;
 }
 
+.settings {
+  padding-bottom: 10px;
+  padding-left: 15px;
+}
+
 html, body {
   height: 100%;
 }
@@ -49,6 +54,10 @@ html, body {
 .overall-rankings {
   height: 250px;
   margin-bottom: 10px;
+}
+
+.starred.fa-star-o {
+  color: lightgrey;
 }
 
 .btn-responsive {

@@ -1,5 +1,25 @@
 <div class="aid-title">
   <i class="fa fa-signal"></i> Top Picks By Position
+  <div class="pull-right">
+    <i class="fa fa-cog"
+      ng-class="{ 'text-info': settings.active }"
+      ng-click="settings.active = !settings.active">
+    </i>
+  </div>
+</div>
+
+<div class="row settings" ng-show="settings.active">
+  <div class="col-sm-6 form-inline">
+    <div class="form-group">
+      <label>Position Limit</label>
+      <input type="number"
+        class="form-control"
+        placeholder="Limit"
+        ng-model="settings.positionLimit"
+        min="1"
+        max="30">
+    </div>
+  </div>
 </div>
 
 <div class="col-sm-6" ng-repeat="position in positions">
@@ -14,12 +34,15 @@
                    warning: player.tier % 4 === 2,
                    info: player.tier % 4 === 3,
                    danger: player.tier % 1 !== 0 }"
-        ng-repeat="player in rankings | orderBy:'rank' | filter:positionFilter(position) | limitTo: 15"
+        ng-repeat="player in rankings | orderBy:'rank' | filter:positionFilter(position) | limitTo: settings.positionLimit"
         ng-click='draft(player)'>
       <td>Tier {{player.tier}}</td>
       <td>{{player.name}}</a></td>
       <td>{{player.team}}</td>
       <td>{{player.bye_week}}</td>
+      <td ng-click="$event.stopPropagation(); player.starred = !player.starred">
+        <i class="starred fa" ng-class="player.starred ? 'fa-star text-danger' : 'fa-star-o'"></i>
+      </td>
     </tr>
   </table>
 </div>

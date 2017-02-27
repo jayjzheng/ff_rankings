@@ -63,6 +63,7 @@ ffControllers.controller('DraftAidCtrl', ['$rootScope', '$scope', '$routeParams'
       var positionMappings = { RB: 'Running Backs',
                                WR: 'Wide Receivers',
                                QB: 'Quarterbacks',
+                               DST: 'Defenses',
                                TE: 'Tightends'};
 
       return positionMappings[position];
@@ -75,4 +76,7 @@ ffControllers.controller('DraftAidCtrl', ['$rootScope', '$scope', '$routeParams'
     $scope.format = 'standard';
     $scope.loadRankings($scope.format);
     $scope.search = {};
+    $scope.settings = {
+      positionLimit: 15
+    };
   }]);
