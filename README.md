@@ -1,3 +1,5 @@
+# [Deprecated]
+New project is built with React: [Here](https://github.com/jayjzheng/draftaid-react)
 
 ## Fantasy Football Rankings
 
